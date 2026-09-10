@@ -12,10 +12,139 @@ $Grey-500: hsl(217, 19%, 35%);
 $Dark-blue: hsl(219, 29%, 14%);
 $Black: hsl(0, 0%, 7%);
 // Typography Body Copy
-$Body-Font-size: 13px;
+$Body-Font-size: calc(1rem * (13 / 16));
 
 // INITIAL RULES
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+// ---      MOBILE FIRST LAYOUT
+.testimonials {
+  background-color: $Grey-100;
+
+  // typography
+  font-size: $Body-Font-size;
+  font-weight: 500;
+  font-family: "Barlow Semi Condensed", Impact, Haettenschweiler,
+    "Arial Narrow Bold", Arial, Helvetica, sans-serif;
+
+  // arrange content
+  padding-block: 5rem;
+  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .testimony {
+    // box styles
+    border-radius: 0.625rem;
+    box-shadow: 2.5rem 3rem 2rem -1rem $Grey-200;
+
+    // arrange content
+    padding: 2.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .profile {
+      // arrange content
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      img {
+        aspect-ratio: 1/1;
+        height: 2rem;
+        border-radius: 50%;
+      }
+      span {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p {
+          font-size: 0.9em;
+        }
+      }
+    }
+    .statements {
+      // arrange content
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .highlight-statement {
+        font-size: 1.5em;
+        line-height: 1.2;
+      }
+      .quoted-statement {
+        line-height: 1.4;
+      }
+    }
+  }
+
+  // individual background colors of testimonies
+  .daniel-clifford {
+    background-color: $Purple-500;
+    img {
+      border: 0.125rem solid $Purple-300;
+    }
+  }
+  .jonathan-walters {
+    background-color: $Grey-500;
+    img {
+      border: 0.125rem solid $Grey-100;
+    }
+  }
+  .jeannete-harmon {
+    background-color: $White;
+    img {
+      border: 0.125rem solid $Grey-100;
+    }
+  }
+  .patrick-abrams {
+    background-color: $Dark-blue;
+    img {
+      border: 0.125rem solid $Purple-500;
+    }
+  }
+  .kira-whittle {
+    background-color: $White;
+    img {
+      border: 0.125rem solid $Grey-100;
+    }
+  }
+}
+
+// --   FONT COLOR SCHEME
+// white
+.font-color-light {
+  p {
+    color: $Grey-200;
+  }
+  .name,
+  .highlight-statement {
+    color: $White;
+  }
+}
+// dark
+.font-color-dark {
+  p {
+    color: $Grey-400;
+  }
+  .name,
+  .highlight-statement {
+    color: $Grey-500;
+  }
+}
+// lightgrey
+.font-color-grey {
+  p {
+    color: $Grey-200;
+  }
+  .name,
+  .highlight-statement {
+    color: $Grey-200;
+  }
 }
