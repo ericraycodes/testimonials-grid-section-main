@@ -43,6 +43,10 @@ Users should be able to:
 
 ### What I learned
 
+I learned to use SASS as CSS preprocessor for this project. It is compiled through a VS Code plugin.
+1. Installed in VS Code the *Live Sass Compiler* by *Glenn Marks*
+1. Added the `<link rel="stylesheet" href="styles/styles.css">` to my html.
+1. Clicked *Watch Sass* at the bottom of VS code to automatically compile SASS code to CSS code inside my local stylesheet everytime I save.
 
 ### Continued development
 
