@@ -21,18 +21,22 @@ $Body-Font-size: calc(1rem * (13 / 16));
 }
 
 // ---      MOBILE FIRST LAYOUT
-.testimonials {
+body {
   background-color: $Grey-100;
+  min-width: 20rem; // 320px
+  padding-block: 5rem;
+  padding-inline: clamp(1.5rem, 8.5333vw, 3rem);
+}
+.testimonials {
+  max-width: 25rem;
+  margin-inline: auto;
 
   // typography
   font-size: $Body-Font-size;
   font-weight: 500;
-  font-family: "Barlow Semi Condensed", Impact, Haettenschweiler,
-    "Arial Narrow Bold", Arial, Helvetica, sans-serif;
+  font-family: "Barlow Semi Condensed", Arial, sans-serif, "Arial Narrow Bold";
 
   // arrange content
-  padding-block: 5rem;
-  padding-inline: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -90,30 +94,35 @@ $Body-Font-size: calc(1rem * (13 / 16));
     img {
       border: 0.125rem solid $Purple-300;
     }
+    grid-area: daniel;
   }
   .jonathan-walters {
     background-color: $Grey-500;
     img {
       border: 0.125rem solid $Grey-100;
     }
+    grid-area: jonathan;
   }
   .jeannete-harmon {
     background-color: $White;
     img {
       border: 0.125rem solid $Grey-100;
     }
+    grid-area: jeanette;
   }
   .patrick-abrams {
     background-color: $Dark-blue;
     img {
       border: 0.125rem solid $Purple-500;
     }
+    grid-area: patrick;
   }
   .kira-whittle {
     background-color: $White;
     img {
       border: 0.125rem solid $Grey-100;
     }
+    grid-area: kira;
   }
 }
 
@@ -146,5 +155,43 @@ $Body-Font-size: calc(1rem * (13 / 16));
   .name,
   .highlight-statement {
     color: $Grey-200;
+  }
+}
+
+// ---      TABLET LAYOUT: 768px
+@media screen and (min-width: 48rem) {
+  body {
+    // arrange content
+    min-height: 100vh;
+    padding-inline: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonials {
+    max-width: 36rem; // 576px
+    
+    // arrange content
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "daniel daniel"
+      "jonathan jeanette"
+      "patrick patrick"
+      "kira kira";
+  }
+}
+
+// ---      WIDESCREEN LAYOUT: 1248px
+@media screen and (min-width: 78rem) {
+  .testimonials {
+    max-width: 74rem; // 1184px
+
+    // arrange content
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
   }
 }

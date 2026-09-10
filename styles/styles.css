@@ -3,13 +3,19 @@
   margin: 0;
 }
 
-.testimonials {
+body {
   background-color: hsl(214deg, 17%, 92%);
+  min-width: 20rem;
+  padding-block: 5rem;
+  padding-inline: clamp(1.5rem, 8.5333vw, 3rem);
+}
+
+.testimonials {
+  max-width: 25rem;
+  margin-inline: auto;
   font-size: 0.8125rem;
   font-weight: 500;
-  font-family: "Barlow Semi Condensed", Impact, Haettenschweiler, "Arial Narrow Bold", Arial, Helvetica, sans-serif;
-  padding-block: 5rem;
-  padding-inline: 2rem;
+  font-family: "Barlow Semi Condensed", Arial, sans-serif, "Arial Narrow Bold";
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -54,30 +60,35 @@
 }
 .testimonials .daniel-clifford {
   background-color: hsl(263deg, 55%, 52%);
+  grid-area: daniel;
 }
 .testimonials .daniel-clifford img {
   border: 0.125rem solid hsl(264deg, 82%, 80%);
 }
 .testimonials .jonathan-walters {
   background-color: hsl(217deg, 19%, 35%);
+  grid-area: jonathan;
 }
 .testimonials .jonathan-walters img {
   border: 0.125rem solid hsl(214deg, 17%, 92%);
 }
 .testimonials .jeannete-harmon {
   background-color: hsl(0deg, 0%, 100%);
+  grid-area: jeanette;
 }
 .testimonials .jeannete-harmon img {
   border: 0.125rem solid hsl(214deg, 17%, 92%);
 }
 .testimonials .patrick-abrams {
   background-color: hsl(219deg, 29%, 14%);
+  grid-area: patrick;
 }
 .testimonials .patrick-abrams img {
   border: 0.125rem solid hsl(263deg, 55%, 52%);
 }
 .testimonials .kira-whittle {
   background-color: hsl(0deg, 0%, 100%);
+  grid-area: kira;
 }
 .testimonials .kira-whittle img {
   border: 0.125rem solid hsl(214deg, 17%, 92%);
@@ -105,4 +116,28 @@
 .font-color-grey .name,
 .font-color-grey .highlight-statement {
   color: hsl(0deg, 0%, 81%);
+}
+
+@media screen and (min-width: 48rem) {
+  body {
+    min-height: 100vh;
+    padding-inline: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonials {
+    max-width: 36rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "daniel daniel" "jonathan jeanette" "patrick patrick" "kira kira";
+  }
+}
+@media screen and (min-width: 78rem) {
+  .testimonials {
+    max-width: 74rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "daniel daniel jonathan kira" "jeanette patrick patrick kira";
+  }
 }
